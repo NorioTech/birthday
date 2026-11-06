@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff4f5">
+<title>Happy Birthday, Melody ✨</title>
+<style>
+  :root{
+    --cream:#fffaf2; --pink:#f8cbd6; --pink2:#f3aebe; --rose:#b85f79;
+    --deep:#704252; --gold:#d7ad62; --ink:#533b45; --white:#fffdfb;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); font-family: ui-rounded,"Avenir Next",Avenir,system-ui,sans-serif;
+    background:var(--cream); overflow-x:hidden;
+  }
+  body:before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:-1; opacity:.45;
+    background-image:radial-gradient(#e8b8c4 1px,transparent 1px);
+    background-size:25px 25px;
+  }
+  .ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .floaty{position:absolute;opacity:.45;animation:drift 12s ease-in-out infinite;font-size:clamp(18px,3vw,30px)}
+  .floaty:nth-child(1){left:7%;top:16%}.floaty:nth-child(2){right:8%;top:23%;animation-delay:-4s}
+  .floaty:nth-child(3){left:13%;bottom:15%;animation-delay:-7s}.floaty:nth-child(4){right:12%;bottom:12%;animation-delay:-2s}
+  @keyframes drift{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-22px) rotate(9deg)}}
+  main{position:relative;z-index:1}
+  .hero{
+    min-height:100svh; display:grid; place-items:center; padding:70px 22px 55px; text-align:center;
+    background:radial-gradient(ellipse at 50% 35%,#fff 0%,#fff5f5 48%,#fff7ed 100%);
+    position:relative; isolation:isolate;
+  }
+  .hero:after{
+    content:"";position:absolute;width:min(78vw,650px);aspect-ratio:1;border-radius:50%;
+    border:1px solid #eacb9a55;box-shadow:0 0 0 24px #f4d8df33,0 0 0 50px #f4d8df22;z-index:-1;
+  }
+  .hero-inner{max-width:760px;animation:rise 1s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border:1px solid #e9cda2;
+    border-radius:99px;background:#fffdf8cc;color:#9a7441;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;
+  }
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:.98;font-size:clamp(4rem,12vw,8.5rem);letter-spacing:-.065em;margin:28px 0 16px;color:var(--deep)}
+  h1 span{display:block;color:#c77991;font-style:italic}
+  .hero-copy{font-family:Georgia,serif;font-size:clamp(1.1rem,2.8vw,1.45rem);line-height:1.65;color:#866875;max-width:550px;margin:0 auto 30px}
+  .button{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:99px;
+    padding:15px 24px;background:var(--deep);color:white;text-decoration:none;font:600 .95rem inherit;
+    box-shadow:0 10px 25px #7042522c;cursor:pointer;transition:transform .2s,box-shadow .2s;
+  }
+  .button:hover{transform:translateY(-3px);box-shadow:0 14px 30px #70425238}
+  .hint{font-size:.8rem;color:#a78a92;margin-top:16px}
+  .scroll-mark{position:absolute;bottom:22px;color:#b48b95;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
+  section.content{padding:90px 20px;max-width:900px;margin:auto}
+  .section-label{text-align:center;color:#b18a53;font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;margin-bottom:14px}
+  h2{font:500 clamp(2.2rem,6vw,4rem)/1.1 Georgia,serif;text-align:center;color:var(--deep);margin:0 0 22px;letter-spacing:-.04em}
+  .intro{text-align:center;max-width:650px;margin:0 auto 35px;color:#8b717a;line-height:1.8}
+  .letter{
+    position:relative;background:#fffdfb;border:1px solid #f0dce0;border-radius:28px;padding:clamp(25px,6vw,52px);
+    box-shadow:0 20px 55px #8c586011;overflow:hidden;
+  }
+  .letter:before{content:"✦";position:absolute;right:25px;top:15px;color:#e3c58d;font-size:2rem}
+  .letter p{font:1.13rem/1.95 Georgia,serif;color:#765965;margin:0 0 18px}
+  .signature{font:italic 1.4rem Georgia,serif;color:#bd7189;margin-top:24px}
+  .age-card{
+    max-width:680px;margin:auto;padding:35px 28px;border-radius:28px;text-align:center;
+    background:linear-gradient(135deg,#f9dce3,#fff0e2);border:1px solid #f1d2d4;
+  }
+  .age-card .big{font-size:3rem;margin-bottom:12px}
+  .age-card p{font:1.25rem/1.7 Georgia,serif;color:#795866;margin:0}
+  .age-card strong{color:#b85f79;font-weight:600}
+  .wish-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+  .wish{
+    background:#fffdfb;border:1px solid #f0dfe1;border-radius:22px;padding:23px 16px;text-align:center;
+    box-shadow:0 12px 30px #8c58600b;transition:transform .25s;
+  }
+  .wish:hover{transform:translateY(-6px) rotate(-1deg)}
+  .wish .emoji{font-size:2rem;display:block;margin-bottom:12px}
+  .wish b{display:block;color:#805766;margin-bottom:7px}
+  .wish small{color:#9b838a;line-height:1.5}
+  .final{
+    margin:30px auto 80px;max-width:850px;padding:65px 22px;text-align:center;border-radius:34px;
+    background:linear-gradient(145deg,#f6d4dc,#fff1e6 65%,#f9e8c9);border:1px solid #efd5cf;
+  }
+  .final .sparkle{font-size:2rem}
+  .final h2{margin:15px 0}
+  .final p{color:#866875;line-height:1.8;max-width:520px;margin:0 auto 25px}
+  footer{text-align:center;padding:0 20px 35px;color:#b0949c;font-size:.8rem}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  #confetti{position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden}
+  .confetti-piece{position:absolute;top:-20px;width:9px;height:14px;border-radius:3px;animation:fall var(--duration) linear forwards;opacity:.9}
+  @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(760deg);opacity:.1}}
+  .heart-pop{position:fixed;z-index:11;pointer-events:none;animation:heartUp 1.5s ease-out forwards;font-size:22px}
+  @keyframes heartUp{to{transform:translateY(-120px) scale(1.5);opacity:0}}
+  @media(max-width:650px){
+    .wish-grid{grid-template-columns:1fr;max-width:390px;margin-left:auto;margin-right:auto}
+    section.content{padding:70px 18px}
+    .final{margin:15px 15px 60px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true">
+  <span class="floaty">♡</span><span class="floaty">✦</span><span class="floaty">✿</span><span class="floaty">♡</span>
+</div>
+<div id="confetti"></div>
+<main>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">✧ a little birthday surprise ✧</div>
+      <h1>Happy Birthday,<span>Melody</span></h1>
+      <p class="hero-copy">Today deserves more than an ordinary “happy birthday”. So, here's a little something made just for you. ♡</p>
+      <a class="button" href="#message" id="openButton">Open your surprise <span>✦</span></a>
+      <div class="hint">A tiny corner of the internet, just for your day.</div>
+    </div>
+    <div class="scroll-mark">scroll for a little more ↓</div>
+  </header>
+
+  <section class="content reveal" id="message">
+    <div class="section-label">01 · a birthday note</div>
+    <h2>A few words for you</h2>
+    <p class="intro">Because a one-line message simply wouldn't do the job.</p>
+    <article class="letter">
+      <p>Happy Birthday, Melody! ♡</p>
+      <p>I hope today brings you the kind of happiness that stays with you long after the candles are blown out. Keep being your funny, lovely and wonderfully unique self. You have a way of making an ordinary conversation a little more interesting, and I hope you never lose that.</p>
+      <p>May this new chapter bring you good memories, exciting opportunities, genuine smiles and plenty of reasons to feel proud of yourself. You deserve a day that's as lovely as the energy you bring to the people around you.</p>
+      <p>Enjoy your day, make some memories, eat something nice and don't let anyone convince you that you have to share the cake. That's between you and the cake. 😂</p>
+      <div class="signature">Have the best birthday, Melody ✨</div>
+    </article>
+  </section>
+
+  <section class="content reveal">
+    <div class="section-label">02 · one important observation</div>
+    <h2>Wait a minute…</h2>
+    <div class="age-card">
+      <div class="big">🧐✨</div>
+      <p>You're getting older, but somehow you still have that <strong>younger-than-your-age</strong> look. Honestly, what's the secret? 😂</p>
+    </div>
+  </section>
+
+  <section class="content reveal">
+    <div class="section-label">03 · the birthday wishes</div>
+    <h2>Here's to your next chapter</h2>
+    <p class="intro">A few things I hope find their way to you this year.</p>
+    <div class="wish-grid">
+      <div class="wish"><span class="emoji">🌷</span><b>More happiness</b><small>Little moments that turn into your favourite memories.</small></div>
+      <div class="wish"><span class="emoji">⭐</span><b>Big opportunities</b><small>New things to try, learn, discover and be proud of.</small></div>
+      <div class="wish"><span class="emoji">💗</span><b>Good people</b><small>Kind hearts, honest friendships and lots of laughter.</small></div>
+    </div>
+  </section>
+
+  <section class="final reveal">
+    <div class="sparkle">🎂 ✨ 🎀</div>
+    <h2>Make this year yours.</h2>
+    <p>Keep smiling, keep being you, and make the most of every little moment. I hope your birthday is genuinely amazing.</p>
+    <button class="button" id="celebrateButton" type="button">One more birthday sparkle ✨</button>
+  </section>
+</main>
+<footer>Made with a little effort and a lot of birthday wishes. ♡</footer>
+<script>
+  const confettiRoot = document.getElementById('confetti');
+  const colors = ['#e9a8ba','#d9b36f','#f5d7dc','#fff','#c77e95','#f4d9a5'];
+  function celebrate(amount=65){
+    for(let i=0;i<amount;i++){
+      const piece=document.createElement('i');
+      piece.className='confetti-piece';
+      piece.style.left=Math.random()*100+'vw';
+      piece.style.background=colors[Math.floor(Math.random()*colors.length)];
+      piece.style.setProperty('--duration',(2.8+Math.random()*2.5)+'s');
+      piece.style.setProperty('--drift',((Math.random()-.5)*220)+'px');
+      piece.style.animationDelay=(Math.random()*.45)+'s';
+      confettiRoot.appendChild(piece);
+      setTimeout(()=>piece.remove(),6000);
+    }
+  }
+  function hearts(){
+    const symbols=['♡','💗','✨','🌸'];
+    for(let i=0;i<7;i++){
+      const el=document.createElement('span');
+      el.className='heart-pop';
+      el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      el.style.left=(15+Math.random()*70)+'vw';
+      el.style.top=(55+Math.random()*30)+'vh';
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),1600);
+    }
+  }
+  document.getElementById('openButton').addEventListener('click',()=>{celebrate(35);hearts()});
+  document.getElementById('celebrateButton').addEventListener('click',()=>{celebrate(100);hearts()});
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  // A small welcome burst on first load.
+  window.addEventListener('load',()=>setTimeout(()=>celebrate(45),350));
+</script>
+</body>
+</html>
